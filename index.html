@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truth or Dare Roulette</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="header-title">Truth or Dare Roulette</h1>
+    
+    <div class="game-container">
+        <div class="mb-6 sm:mb-8"> 
+            <h2 class="section-header">Pemain</h2>
+            <div class="input-group">
+                <input type="text" id="playerNameInput" placeholder="Ketik nama pemain...">
+                <button id="addPlayerBtn" class="btn btn-primary"><i class="fas fa-user-plus"></i>Tambah</button>
+            </div>
+            <div id="playerList" class="mt-4 max-h-32 sm:max-h-40 overflow-y-auto">
+                <p class="text-sm text-gray-400 italic">Belum ada pemain.</p>
+            </div>
+        </div>
+
+        <div class="roulette-section"> 
+            <h2 class="section-header">Roulette</h2>
+            <div class="roulette-container">
+                <div class="roulette-pointer"></div>
+                <div id="rouletteWheel" class="roulette-wheel">
+                </div>
+                <div class="roulette-center-knob"></div>
+            </div>
+            <button id="spinBtn" class="btn btn-primary w-full sm:w-auto"><i class="fas fa-sync-alt"></i>Tahan & Putar!</button>
+            <div id="selectedPlayerDisplay" class="selected-player-display mt-4 sm:mt-5">Siapakah yang beruntung?</div>
+        </div>
+
+        <div id="truthOrDareButtons" class="mb-6 sm:mb-8 visible-transition"> 
+            <h3 class="text-lg font-medium mb-3 text-yellow-300"><span id="currentPlayerForChallenge"></span>, pilih takdirmu:</h3>
+            <div class="truth-dare-buttons-container">
+                <button id="truthBtn" class="btn btn-truth"><i class="fas fa-question"></i>Truth</button>
+                <button id="dareBtn" class="btn btn-dare"><i class="fas fa-bolt"></i>Dare</button>
+            </div>
+        </div>
+
+        <div id="challengeDisplay" class="challenge-display">
+            <span id="challengeType" class="challenge-type"></span>
+            <span id="challengeText" class="challenge-text">Pertanyaan atau tantangan akan muncul di sini.</span>
+        </div>
+
+        <div class="next-turn-container"> 
+            <button id="nextTurnBtn" class="btn btn-secondary w-full sm:w-auto visible-transition"><i class="fas fa-redo-alt"></i>Giliran Berikutnya</button>
+        </div>
+    </div>
+
+    <footer class="app-footer">
+        <p>&copy; <span id="currentYear"></span> Truth or Dare Roulette. Semua Hak Dilindungi.</p>
+        <p>Dibuat oleh <a href="https://instagram.com/baronnnd_" target="_blank" rel="noopener noreferrer">Baron</a>.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
